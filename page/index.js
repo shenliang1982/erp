@@ -155,7 +155,7 @@ Page({
         });
         //载入列表
         dd.httpRequest({
-          url: "http://47.114.96.139:8888/ActBack.ashx",
+          url: t.data.login.url,
           method: 'POST',
           data: {
             username: t.data.login.username,
@@ -167,14 +167,27 @@ Page({
           success: (res2) => {
             var d_1 = res2.data.json_ar_0;
             var d_2 = t.data.arr.list;
-            for (var i = 0; i < d_1.length; i++) {
+            for (var i = d_2.length - 1; i > -1; i--) {
+              for (var j = d_2[i].subs.length - 1; j > -1; j--) {
+                for (var k = 0; k < d_1.length; k++) {
+                  if (d_1[k].entitle == d_2[i].subs[j].entitle) {
+                    d_2[i].subs.splice(j, 1);
+                    break;
+                  }
+                }
+              }
+            }
+            for (var i = d_2.length - 1; i > -1; i--) {
+              if (d_2[i].length == 0) d_2.splice(i, 1);
+            }
+            /*for (var i = 0; i < d_1.length; i++) {
               for (var j = 0; j < d_2.length; j++) {
                 if (d_2[j].entitle == d_1[i].entitle) {
                   d_2.splice(j, 1);
                   break;
                 }
               }
-            }
+            }*/
             t.setData({ "arr.list": [] });
             t.setData({ "arr.list": d_2 });
           },

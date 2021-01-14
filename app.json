@@ -9,7 +9,15 @@
     "page/FinanceReport/ExternalOutCompanyYear/ExternalOutCompanyYear",
     "page/FinanceReport/InBalance/InBalance",
     "page/FinanceReport/InCompany/InCompany",
-    "page/FinanceReport/InEmployee/InEmployee"
+    "page/FinanceReport/InEmployee/InEmployee",
+    "page/FinanceReport/OutBalance/OutBalance",
+    "page/FinanceReport/OutCompany/OutCompany",
+    "page/FinanceReport/SellCompare/SellCompare",
+    "page/FinanceReport/SellExternalCompare/SellExternalCompare",
+    "page/FinanceReport/SellSort/SellSort",
+    "page/FinanceReport/SellYear/SellYear",
+    "page/FinanceReport/SellYearExternal/SellYearExternal",
+    "page/FinanceReport/SumUp/SumUp"
   ],
   "window": {
     "defaultTitle": "正达ERP",
