@@ -19,60 +19,126 @@ Page({
       list: [
         {
           icon: '/image/view.png',
-          title: '项目',
-          entitle: '梅霖/项目',
-          page: 'ProjectM/ProjectList/ProjectList',
+          title: '外贸应收',
+          entitle: '外贸应收',
+          subs: [
+            {
+              title: '全年外贸应收表',
+              entitle: '财务报表/全年外贸应收表',
+              page: 'FinanceReport/ExternalInCompanyYear/ExternalInCompanyYear',
+            },
+            {
+              title: '当月外贸应收表',
+              entitle: '财务报表/当月外贸应收表',
+              page: 'FinanceReport/ExternalInCompany/ExternalInCompany',
+            },
+            {
+              title: '外贸应收明细',
+              entitle: '财务报表/外贸应收明细',
+              page: 'FinanceReport/ExternalInBalance/ExternalInBalance',
+            },
+            {
+              title: '外贸业务员分组月汇总',
+              entitle: '财务报表/外贸业务员分组月汇总',
+              page: 'FinanceReport/SellYearExternal/SellYearExternal',
+            },
+            {
+              title: '销售同比外贸',
+              entitle: '财务报表/销售同比外贸',
+              page: 'FinanceReport/SellExternalCompare/SellExternalCompare',
+            },
+            {
+              title: '业务排名内外',
+              entitle: '财务报表/业务排名内外',
+              page: 'FinanceReport/SellSort/SellSort',
+            },
+          ],
         }, {
           icon: '/image/basic.png',
-          title: '日志',
-          entitle: '梅霖/日志',
-          page: 'ProjectM/ProjectDiaryList/ProjectDiaryList',
+          title: '外贸应付',
+          entitle: '外贸应付',
+          subs: [
+            {
+              title: '外贸应付汇总',
+              entitle: '财务报表/外贸应付汇总',
+              page: 'FinanceReport/ExternalOutCompanyYear/ExternalOutCompanyYear',
+            },
+            {
+              title: '外贸应付当月汇总',
+              entitle: '财务报表/外贸应付当月汇总',
+              page: 'FinanceReport/ExternalOutCompany/ExternalOutCompany',
+            },
+            {
+              title: '外贸应付账款对账单',
+              entitle: '财务报表/外贸应付账款对账单',
+              page: 'FinanceReport/ExternalOutBalance/ExternalOutBalance',
+            },
+          ],
         }, {
           icon: '/image/form.png',
-          title: '查看',
-          entitle: '梅霖/日志查看',
-          page: 'ProjectM/ProjectDiaryListLookDept/ProjectDiaryListLookDept',
+          title: '内贸应收',
+          entitle: '内贸应收',
+          subs: [
+            {
+              title: '业务员分组分月汇总',
+              entitle: '财务报表/业务员分组分月汇总',
+              page: 'FinanceReport/SellYear/SellYear',
+            },
+            {
+              title: '销售同比内贸',
+              entitle: '财务报表/销售同比内贸',
+              page: 'FinanceReport/SellCompare/SellCompare',
+            },
+            {
+              title: '分组汇总',
+              entitle: '财务报表/分组汇总',
+              page: 'FinanceReport/InEmployee/InEmployee',
+            },
+            {
+              title: '应付账款',
+              entitle: '财务报表/应付账款',
+              page: 'FinanceReport/OutCompany/OutCompany',
+            },
+            {
+              title: '应收月度对账单',
+              entitle: '财务报表/应收月度对账单',
+              page: 'FinanceReport/OutBalance/OutBalance',
+            },
+          ],
         }, {
           icon: '/image/biz_errorview.png',
-          title: '昨日日志',
-          entitle: '项目报表/昨日情况',
-          page: 'ProjectM/DiaryToday/DiaryToday',
+          title: '内贸应付',
+          entitle: '内贸应付',
+          subs: [
+            {
+              title: '应付账款',
+              entitle: '财务报表/应付账款',
+              page: 'FinanceReport/OutCompany/OutCompany',
+            },
+            {
+              title: '应付月度对账单',
+              entitle: '财务报表/应付月度对账单',
+              page: 'FinanceReport/OutBalance/OutBalance',
+            },
+          ],
         }, {
           icon: '/image/icon_component_HL.png',
-          title: '采购图片',
-          entitle: '采购入库/采购图片',
-          page: 'StorageWork/PurchaseList1Add/PurchaseList1Add',
-        },{
-          icon: '/image/biz_tag.png',
-          title: '采购确认',
-          entitle: '采购入库/采购确认',
-          page: 'StorageWork/PurchaseList3Ok/PurchaseList3Ok',
-        },{
-          icon: '/image/icon_component_HL.png',
-          title: '采购审核',
-          entitle: '采购入库/采购审核',
-          page: 'StorageWork/PurchaseList5Check/PurchaseList5Check',
-        },{
-          icon: '/image/icon_component_HL.png',
-          title: '采购抄送',
-          entitle: '采购入库/采购抄送',
-          page: 'StorageWork/PurchaseList6Manage/PurchaseList6Manage',
-        },{
-          icon: '/image/icon_biz_HL.png',
-          title: '入库',
-          entitle: '采购入库/扫描入库',
-          page: 'StorageWork/DingStorageIn/DingStorageIn',
-        },{
-          icon: '/image/canvas.png',
-          title: '入库确认',
-          entitle: '采购入库/库管确认',
-          page: 'StorageWork/StorageInListCheck/StorageInListCheck',
+          title: '其他',
+          entitle: '其他',
+          subs: [
+            {
+              title: '综述',
+              entitle: '财务报表/综述',
+              page: 'FinanceReport/SumUp/SumUp',
+            },
+          ],
         },
       ],
     },
     login: {
       username: "",
-      code_login: ""
+      code_login: "",
+      url: ""
     },
   },
   onLoad(e) {
@@ -94,7 +160,7 @@ Page({
           data: {
             username: t.data.login.username,
             code_login: t.data.login.code_login,
-            name_proj: "MeiLin",
+            name_proj: "ZhengDaFinance",
             name_space: "Purview.MenuLeft.HideMenuDing"
           },
           dataType: 'json',

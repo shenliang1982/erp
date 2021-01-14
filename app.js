@@ -51,7 +51,7 @@ App({
       success: function(res1) {
         //免登
         dd.httpRequest({
-          url: "http://47.114.96.139:8888/DingLogin.ashx",
+          url: "http://115.238.99.170:8888/DingLogin.ashx",
           method: 'POST',
           data: {
             code: res1.authCode
@@ -59,6 +59,7 @@ App({
           dataType: 'json',
           success: (res2) => {
             //dd.alert({content: "29" + JSON.stringify(res2)});
+            res2.data.url = "http://115.238.99.170:8888/ActBack.ashx";
             dd.setStorage({
               key: 'login',
               data: res2.data,

@@ -1,9 +1,0 @@
-<import src="/page/biz/components/list/index.axml" />
-
-<view>
-  <button type="ghost" size="mini" onTap="go_last" loading>退回</button>
-  <button style="margin-left: 5px;" type="ghost" size="mini" onTap="go_next" loading>确认</button>
-</view>
-<view>
-    <template is="List" data={{...listData}}></template>
-</view>

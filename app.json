@@ -1,36 +1,18 @@
 {
   "pages": [
     "page/index",
-    "page/ProjectM/ProjectList/ProjectList",
-    "page/ProjectM/ProjectEdit/ProjectEdit",
-    "page/ProjectM/ProjectListDiary/ProjectListDiary",
-    "page/ProjectM/ProjectDiaryLook/ProjectDiaryLook",
-    "page/ProjectM/ProjectDiaryList/ProjectDiaryList",
-    "page/ProjectM/ProjectDiaryEdit/ProjectDiaryEdit",
-    "page/ProjectM/ProjectDiaryListLook/ProjectDiaryListLook",
-    "page/ProjectM/ProjectLook/ProjectLook",
-    "page/ProjectM/ProjectDiaryListLookDept/ProjectDiaryListLookDept",
-    "page/ProjectM/ProjectDiaryListLookAcc/ProjectDiaryListLookAcc",
-    "page/StorageWork/DingStorageIn/DingStorageIn",
-    "page/StorageWork/DingStorageInQty/DingStorageInQty",
-    "page/StorageWork/DingStorageInAdd/DingStorageInAdd",
-    "page/ProjectM/DiaryToday/DiaryToday",
-    "page/StorageWork/PurchaseList1Add/PurchaseList1Add",
-    "page/StorageWork/PurchaseList3Ok/PurchaseList3Ok",
-    "page/StorageWork/PurchaseList3Ok2/PurchaseList3Ok2",
-    "page/StorageWork/PurchaseList5Check/PurchaseList5Check",
-    "page/StorageWork/PurchaseList5Check2/PurchaseList5Check2",
-    "page/StorageWork/PurchaseList5Check3/PurchaseList5Check3",
-    "page/StorageWork/PurchaseList6Manage/PurchaseList6Manage",
-    "page/StorageWork/PurchaseList6Manage2/PurchaseList6Manage2",
-    "page/StorageWork/PurchaseList6Manage3/PurchaseList6Manage3",
-    "page/StorageWork/PurchasePic/PurchasePic",
-    "page/StorageWork/StorageInListCheck/StorageInListCheck",
-    "page/StorageWork/StorageInListCheck2/StorageInListCheck2",
-    "page/StorageWork/StorageInPic/StorageInPic"
+    "page/FinanceReport/ExternalInBalance/ExternalInBalance",
+    "page/FinanceReport/ExternalInCompany/ExternalInCompany",
+    "page/FinanceReport/ExternalInCompanyYear/ExternalInCompanyYear",
+    "page/FinanceReport/ExternalOutBalance/ExternalOutBalance",
+    "page/FinanceReport/ExternalOutCompany/ExternalOutCompany",
+    "page/FinanceReport/ExternalOutCompanyYear/ExternalOutCompanyYear",
+    "page/FinanceReport/InBalance/InBalance",
+    "page/FinanceReport/InCompany/InCompany",
+    "page/FinanceReport/InEmployee/InEmployee"
   ],
   "window": {
-    "defaultTitle": "梅霖ERP",
+    "defaultTitle": "正达ERP",
     "backgroundColor": "#F5F5F9",
     "pullRefresh": false,
     "allowsBounceVertical": "YES"
@@ -41,10 +23,10 @@
     "backgroundColor": "#F5F5F9",
     "items": [
       {
-        "pagePath": "page/index",
+        "pagePath": "page/FinanceReport/index",
         "icon": "image/icon_component.png",
         "activeIcon": "image/icon_component_HL.png",
-        "name": "梅霖项目"
+        "name": "正达财务"
       }
     ]
   },
