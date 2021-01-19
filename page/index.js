@@ -178,7 +178,7 @@ Page({
               }
             }
             for (var i = d_2.length - 1; i > -1; i--) {
-              if (d_2[i].length == 0) d_2.splice(i, 1);
+              if (d_2[i].subs.length == 0) d_2.splice(i, 1);
             }
             /*for (var i = 0; i < d_1.length; i++) {
               for (var j = 0; j < d_2.length; j++) {
@@ -192,7 +192,7 @@ Page({
             t.setData({ "arr.list": d_2 });
           },
           fail: (res2) => {
-            dd.alert({ content: "91" + JSON.stringify(res2) });
+            dd.alert({ content: "196" + JSON.stringify(res2) });
           },
           complete: (res2) => {
             dd.hideLoading();

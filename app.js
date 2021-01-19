@@ -48,26 +48,34 @@ App({
   },
   DingLogin() {
     dd.getAuthCode({
-      success: function(res1) {
+      success: function (res1) {
         //免登
         dd.httpRequest({
-          url: "http://115.238.99.170:8888/DingLogin.ashx",
+          url: "http://115.238.99.170:8888/ZDWeb/DingLogin.ashx",
           method: 'POST',
           data: {
             code: res1.authCode
           },
           dataType: 'json',
           success: (res2) => {
-            //dd.alert({content: "29" + JSON.stringify(res2)});
-            res2.data.url = "http://115.238.99.170:8888/ActBack.ashx";
+            var url_1 = {
+              username: res2.data.username,
+              code_login: res2.data.code_login,
+              url: "http://115.238.99.170:8888/ZDWeb/ActBack.ashx",
+            };
             dd.setStorage({
               key: 'login',
-              data: res2.data,
-              success: function() { }
+              data: url_1,
+              success: function (res3) {
+                //dd.alert({ content: "70" + JSON.stringify(res3) });
+              },
+              fail: (res3) => {
+                dd.alert({ content: "73" + JSON.stringify(res3) });
+              },
             });
           },
           fail: (res2) => {
-            dd.alert({content: "37" + JSON.stringify(res2)});
+            dd.alert({ content: "78" + JSON.stringify(res2) });
           },
         });
       }

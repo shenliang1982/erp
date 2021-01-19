@@ -5,7 +5,7 @@ Page({
   data: {
     listData: {
       onItemTap: 'handleListItemTap',
-      header: 'list1',
+      //header: 'list1',
       data: [
         {
           title: '标题文字',
