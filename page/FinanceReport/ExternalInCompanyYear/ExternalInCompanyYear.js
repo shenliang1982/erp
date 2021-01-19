@@ -154,7 +154,7 @@ Page({
               if (d.qty_reward != "") title_2 += " [积分]" + d.qty_reward;
               if (d.remark_task != "") title_2 += " [备注]" + d.remark_task;
 
-              var d = {
+              var dd_2 = {
                 title: title_1
                 , thumb: "https://zos.alipayobjects.com/rmsportal/NTuILTPhmSpJdydEVwoO.png"
                 , extra: "查看详情"
@@ -162,7 +162,7 @@ Page({
                 , no_ls: d.no_ls
                 , title_2: title_2
               };
-              d_2.push(d);
+              d_2.push(dd_2);
             }
             t.setData({ "listData.data": d_2 });
           },

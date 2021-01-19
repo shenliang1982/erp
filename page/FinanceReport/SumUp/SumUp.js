@@ -69,7 +69,7 @@ Page({
               t.onLoad();
             },
             fail: (res2) => {
-              dd.alert({content: JSON.stringify(res2)});
+              dd.alert({ content: JSON.stringify(res2) });
             },
             complete: (res2) => {
               dd.hideLoading();
@@ -98,7 +98,7 @@ Page({
     var t = this;
     dd.getStorage({
       key: 'is_on_show_refresh',
-      success: function(res) {
+      success: function (res) {
         if (res.data) {
           dd.setStorage({ key: 'is_on_show_refresh', data: false });
           t.onLoad();
@@ -106,9 +106,21 @@ Page({
       }
     });
   },
+  addList(d_2, caption, qty) {
+    var title_1 = '[' + caption + ']' + qty;
+    var dd_2 = {
+      title: title_1
+      , thumb: "https://zos.alipayobjects.com/rmsportal/NTuILTPhmSpJdydEVwoO.png"
+      , extra: "查看详情"
+      , textMode: "wrap"
+      , no_ls: caption
+      , title_2: title_1
+    };
+    d_2.push(dd_2);
+  },
   onLoad() {
     var t = this;
-    if(t.data.date_1 == ''){
+    if (t.data.date_1 == '') {
       var now = new Date();
       t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + (now.getDate()) });
       t.setData({ "date_2": t.data.date_1 });
@@ -116,7 +128,7 @@ Page({
     //判定是否登录
     dd.getStorage({
       key: 'login',
-      success: function(res) {
+      success: function (res) {
         t.setData({ login: res.data });
         //载入等待
         dd.showLoading({
@@ -132,42 +144,40 @@ Page({
             code_login: t.data.login.code_login,
             date_start: t.data.date_1,
             date_end: t.data.date_2 + " 23:59:59",
-            name_space: "Task.TaskListAct.BindinggridControl1"
+            name_space: "FinanceReport.SumUp.BindinggroupControl2"
           },
           dataType: 'json',
           success: (res2) => {
             //dd.alert({content: "51" + JSON.stringify(res2.data)});
             var d_1 = res2.data.json_ar_0;
             var d_2 = [];
-            for (var i = 0; i < d_1.length; i++) {
-              var d = d_1[i];
-              var title_1 = "";
-              title_1 += "[名称]" + d.name_task;
-              title_1 += "\n[截止]" + d.date_end;
-              title_1 += "\n[地点]" + d.addr;
-              var title_2 = "";
-              if (d.name_task != "") title_2 += " [名称]" + d.name_task;
-              if (d.date_end != "") title_2 += " [截止]" + d.date_end;
-              if (d.addr != "") title_2 += " [地点]" + d.addr;
-              if (d.name_task_flow != "") title_2 += " [流程]" + d.name_task_flow;
-              if (d.name_project != "") title_2 += " [项目]" + d.name_project;
-              if (d.qty_reward != "") title_2 += " [积分]" + d.qty_reward;
-              if (d.remark_task != "") title_2 += " [备注]" + d.remark_task;
+            var d = d_1[0];
+            t.addList(d_2, "外贸应收单数", d.qty_external_invoice_in);
+            t.addList(d_2, "外贸应收金额", d.amount_external_invoice_in);
+            t.addList(d_2, "外贸收款单数", d.qty_external_in);
+            t.addList(d_2, "外贸收款金额", d.amount_external_in);
 
-              var d = {
-                title: title_1
-                , thumb: "https://zos.alipayobjects.com/rmsportal/NTuILTPhmSpJdydEVwoO.png"
-                , extra: "查看详情"
-                , textMode: "wrap"
-                , no_ls: d.no_ls
-                , title_2: title_2
-              };
-              d_2.push(d);
-            }
+            t.addList(d_2, "外贸应付单数", d.qty_external_invoice_out);
+            t.addList(d_2, "外贸应付金额", d.amount_external_invoice_out);
+            t.addList(d_2, "外贸付款单数", d.qty_external_out);
+            t.addList(d_2, "外贸付款金额", d.amount_external_out);
+
+            t.addList(d_2, "内贸应收单数", d.qty_in_need);
+            t.addList(d_2, "内贸应收金额", d.amount_in_need);
+            t.addList(d_2, "收款发票单数", d.qty_invoice_in);
+            t.addList(d_2, "收款发票金额", d.amount_invoice_in);
+            t.addList(d_2, "内贸收款单数", d.qty_in);
+            t.addList(d_2, "内贸收款金额", d.amount_in);
+
+            t.addList(d_2, "内贸应付单数", d.qty_invoice_out);
+            t.addList(d_2, "内贸应付金额", d.amount_invoice_out);
+            t.addList(d_2, "内贸应付单数", d.qty_out);
+            t.addList(d_2, "内贸应付金额", d.amount_out);
+
             t.setData({ "listData.data": d_2 });
           },
           fail: (res2) => {
-            dd.alert({content: JSON.stringify(res2)});
+            dd.alert({ content: JSON.stringify(res2) });
           },
           complete: (res2) => {
             dd.hideLoading();
