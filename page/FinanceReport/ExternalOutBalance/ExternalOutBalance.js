@@ -72,6 +72,7 @@ Page({
   newdate_1() {
     var t = this;
     dd.datePicker({
+      format: 'yyyy-MM',
       currentDate: t.data.date_1,
       startDate: '2020-1-1',
       endDate: '2030-1-1',
