@@ -92,7 +92,11 @@ Page({
     var t = this;
     var d = this.data.listData.data[e.currentTarget.dataset.index];
     dd.navigateTo({
-      url: '../ExternalInBalance/ExternalInBalance?date_1=' + t.data.date_1 + '&no_money_title_1=' + t.data.no_money_title_1 + '&no_company=' + d.no_company
+      url: '../ExternalInBalance/ExternalInBalance?date_1=' + t.data.date_1
+        + '&no_money_title_1=' + t.data.no_money_title_1
+        + '&name_money_title_1=' + t.data.name_money_title_1
+        + '&no_company=' + d.no_company
+        + '&name_company=' + d.name_company
     });
   },
   onShow() {
@@ -157,6 +161,7 @@ Page({
                 //, extra: "查看详情"
                 , textMode: "wrap"
                 , no_company: d.no_company
+                , name_company: d.name_company
                 , title_2: title_2
               };
               d_2.push(dd_2);

@@ -137,9 +137,16 @@ Page({
   },
   onLoad() {
     var t = this;
-    if(t.data.date_1 == ''){
-      var now = new Date();
-      t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) });
+    if (t.data.date_1 == '') {
+      if (e == null || e.date_1 == null) {
+        var now = new Date();
+        t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) });
+      }
+      else {
+        t.setData({ "date_1": e.date_1 });
+        t.setData({ "no_company": e.no_company });
+        t.setData({ "name_company": e.name_company });
+      }
     }
     //判定是否登录
     dd.getStorage({
@@ -173,6 +180,7 @@ Page({
               title_1 += "[日期]" + d.date_act;
               title_1 += "\n[应付]" + d.amount_out_need;
               title_1 += "\n[付款]" + d.amount_out;
+              title_1 += "\n[余额]" + d.amount_left;
               var title_2 = "";
 
               var dd_2 = {

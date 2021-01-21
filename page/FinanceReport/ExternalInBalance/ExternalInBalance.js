@@ -61,12 +61,12 @@ Page({
   select_title() {
     var t = this;
     t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_money_title_1"
-    , "no_money_title_1", "name_money_title_1");
+      , "no_money_title_1", "name_money_title_1");
   },
   select_company() {
     var t = this;
     t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_company"
-    , "no_company", "name_company");
+      , "no_company", "name_company");
   },
   newdate_1() {
     var t = this;
@@ -81,23 +81,20 @@ Page({
       },
     });
   },
-  onShow() {
-    var t = this;
-    dd.getStorage({
-      key: 'is_on_show_refresh',
-      success: function (res) {
-        if (res.data) {
-          dd.setStorage({ key: 'is_on_show_refresh', data: false });
-          t.onLoad();
-        }
-      }
-    });
-  },
-  onLoad() {
+  onLoad(e) {
     var t = this;
     if (t.data.date_1 == '') {
-      var now = new Date();
-      t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) });
+      if (e == null || e.date_1 == null) {
+        var now = new Date();
+        t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) });
+      }
+      else {
+        t.setData({ "date_1": e.date_1 });
+        t.setData({ "no_money_title_1": e.no_money_title_1 });
+        t.setData({ "name_money_title_1": e.name_money_title_1 });
+        t.setData({ "no_company": e.no_company });
+        t.setData({ "name_company": e.name_company });
+      }
     }
     //判定是否登录
     dd.getStorage({
@@ -132,6 +129,7 @@ Page({
               title_1 += "[日期]" + d.date_act;
               title_1 += "\n[应收]" + d.amount_in_need;
               title_1 += "\n[收款]" + d.amount_in;
+              title_1 += "\n[余额]" + d.amount_left;
               var title_2 = "";
 
               var dd_2 = {
