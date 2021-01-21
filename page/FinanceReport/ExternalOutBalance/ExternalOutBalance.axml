@@ -1,11 +1,9 @@
 <import src="/page/biz/components/list/index.axml" />
 
 <view style="display: flex; justify-content: space-between;">
-  <view>
   <button type="ghost" size="mini" onTap="newdate_1">{{date_1}}</button>
-  <button style="margin-left: 5px;" type="ghost" size="mini" onTap="newdate_2">{{date_2}}</button>
-  </view>
-  <button type="ghost" size="mini" onTap="add" loading>增加</button>
+  <button type="ghost" size="mini" onTap="select_title" loading>{{name_money_title_1}}</button>
+  <button type="ghost" size="mini" onTap="select_company" loading>{{name_company}}</button>
 </view>
 <view>
     <template is="List" data={{...listData}}></template>

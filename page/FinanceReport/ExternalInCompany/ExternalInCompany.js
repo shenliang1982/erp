@@ -15,6 +15,12 @@ Page({
     },
     date_1: '',
     date_2: '',
+    no_money_title_1: '',
+    name_money_title_1: '抬头',
+    no_employee: '',
+    name_employee: '业务员',
+    no_currency: '',
+    name_currency: '币种'
   },
   add() {
     dd.navigateTo({
