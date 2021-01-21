@@ -135,7 +135,8 @@ Page({
                 , thumb: "https://zos.alipayobjects.com/rmsportal/NTuILTPhmSpJdydEVwoO.png"
                 //, extra: "查看详情"
                 , textMode: "wrap"
-                , no_ls: d.no_ls
+                , no_company: d.no_company
+                , name_company: d.name_company
                 , title_2: title_2
               };
               d_2.push(dd_2);
