@@ -59,7 +59,7 @@ Page({
   select_title() {
     var t = this;
     t.select_item("FinanceReport.ExternalOutCompany.AlxpanelControl2name_money_title_1"
-    , "no_money_title_1", "name_money_title_1");
+      , "no_money_title_1", "name_money_title_1");
   },
   newdate_1() {
     var t = this;
@@ -77,57 +77,15 @@ Page({
   handleListItemTap(e) {
     var t = this;
     var d = this.data.listData.data[e.currentTarget.dataset.index];
-    dd.showActionSheet({
-      title: d.title_2,
-      items: ['完成', '达成', '放弃', '搁置'],
-      //cancelButtonText: '取消',
-      success: (res) => {
-        if (res.index == 0) {
-          //提交
-          dd.httpRequest({
-            url: t.data.login.url,
-            method: 'POST',
-            data: {
-              username: t.data.login.username,
-              code_login: t.data.login.code_login,
-              no_ls: d.no_ls,
-              name_space: "ProjectLinkUse.TaskListAct.FastYes"
-            },
-            dataType: 'json',
-            success: (res2) => {
-              t.onLoad();
-            },
-            fail: (res2) => {
-              dd.alert({content: JSON.stringify(res2)});
-            },
-            complete: (res2) => {
-              dd.hideLoading();
-            },
-          });
-        }
-        else if (res.index == 1) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerYes?no_ls=' + d.no_ls
-          });
-        }
-        else if (res.index == 2) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerNo?no_ls=' + d.no_ls
-          });
-        }
-        else if (res.index == 3) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerNext?no_ls=' + d.no_ls
-          });
-        }
-      },
+    dd.navigateTo({
+      url: '../ExternalOutBalance/ExternalOutBalance?no_company=' + d.no_company + "&no_money_title_1=" + t.data.no_money_title_1 + "&date_1=" + t.data.date_1
     });
   },
   onShow() {
     var t = this;
     dd.getStorage({
       key: 'is_on_show_refresh',
-      success: function(res) {
+      success: function (res) {
         if (res.data) {
           dd.setStorage({ key: 'is_on_show_refresh', data: false });
           t.onLoad();
@@ -137,14 +95,14 @@ Page({
   },
   onLoad() {
     var t = this;
-    if(t.data.date_1 == ''){
+    if (t.data.date_1 == '') {
       var now = new Date();
       t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) });
     }
     //判定是否登录
     dd.getStorage({
       key: 'login',
-      success: function(res) {
+      success: function (res) {
         t.setData({ login: res.data });
         //载入等待
         dd.showLoading({
@@ -159,7 +117,7 @@ Page({
             username: t.data.login.username,
             code_login: t.data.login.code_login,
             date_start: t.data.date_1 + "-01",
-            no_money_title_1: t.data.login.no_money_title_1,
+            no_money_title_1: t.data.no_money_title_1,
             name_space: "FinanceReport.ExternalOutCompany.BindinggridControl1"
           },
           dataType: 'json',
@@ -182,7 +140,7 @@ Page({
                 , thumb: "https://zos.alipayobjects.com/rmsportal/NTuILTPhmSpJdydEVwoO.png"
                 , extra: "查看详情"
                 , textMode: "wrap"
-                , no_ls: d.no_ls
+                , no_company: d.no_company
                 , title_2: title_2
               };
               d_2.push(dd_2);
@@ -190,7 +148,7 @@ Page({
             t.setData({ "listData.data": d_2 });
           },
           fail: (res2) => {
-            dd.alert({content: JSON.stringify(res2)});
+            dd.alert({ content: JSON.stringify(res2) });
           },
           complete: (res2) => {
             dd.hideLoading();

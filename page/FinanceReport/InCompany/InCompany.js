@@ -159,7 +159,7 @@ Page({
             username: t.data.login.username,
             code_login: t.data.login.code_login,
             date_start: t.data.date_1 + "-01",
-            no_employee: t.data.login.no_employee,
+            no_employee: t.data.no_employee,
             name_space: "FinanceReport.InCompany.BindinggridControl1"
           },
           dataType: 'json',
