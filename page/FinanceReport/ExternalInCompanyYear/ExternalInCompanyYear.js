@@ -14,12 +14,12 @@ Page({
       url: ""
     },
     date_1: '',
-    no_money_title_1: '',
-    name_money_title_1: '抬头',
+    no_money_title_1: '1-001',
+    name_money_title_1: '英帛尔',
     no_employee: '',
     name_employee: '业务员',
-    no_currency: '',
-    name_currency: '币种'
+    no_currency: '02',
+    name_currency: '美元'
   },
   select_item(name_space, name_col_no, name_col_name) {
     var t = this;
@@ -147,7 +147,7 @@ Page({
               var dd_2 = {
                 title: title_1
                 , thumb: "https://zos.alipayobjects.com/rmsportal/NTuILTPhmSpJdydEVwoO.png"
-                , extra: "查看详情"
+                //, extra: "查看详情"
                 , textMode: "wrap"
                 , title_2: title_2
               };

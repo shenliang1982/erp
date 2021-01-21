@@ -14,8 +14,8 @@ Page({
       url: ""
     },
     date_1: '',
-    no_money_title_1: '',
-    name_money_title_1: '抬头'
+    no_money_title_1: '1-001',
+    name_money_title_1: '英帛尔'
   },
   select_item(name_space, name_col_no, name_col_name) {
     var t = this;
@@ -180,7 +180,7 @@ Page({
               var dd_2 = {
                 title: title_1
                 , thumb: "https://zos.alipayobjects.com/rmsportal/NTuILTPhmSpJdydEVwoO.png"
-                , extra: "查看详情"
+                //, extra: "查看详情"
                 , textMode: "wrap"
                 , no_ls: d.no_ls
                 , title_2: title_2
