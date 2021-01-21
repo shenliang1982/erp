@@ -16,11 +16,6 @@ Page({
     date_1: '',
     date_2: '',
   },
-  add() {
-    dd.navigateTo({
-      url: '../ProjectDiaryEdit/ProjectDiaryEdit'
-    });
-  },
   newdate_1() {
     var t = this;
     dd.datePicker({

@@ -18,10 +18,54 @@ Page({
     no_company: '',
     name_company: '客户'
   },
-  add() {
-    dd.navigateTo({
-      url: '../ProjectDiaryEdit/ProjectDiaryEdit'
+  select_item(name_space, name_col_no, name_col_name) {
+    var t = this;
+    //载入列表
+    dd.httpRequest({
+      url: t.data.login.url,
+      method: 'POST',
+      data: {
+        username: t.data.login.username,
+        code_login: t.data.login.code_login,
+        name_space: name_space
+      },
+      dataType: 'json',
+      success: (res2) => {
+        var d_1 = res2.data.json_ar_0;
+        var d_2 = [];
+        for (var i = 0; i < d_1.length; i++) {
+          var d = d_1[i];
+          d_2.push(d[name_col_name]);
+        }
+
+        dd.showActionSheet({
+          title: "选择",
+          items: d_2,
+          //cancelButtonText: '取消',
+          success: (res) => {
+            t.setData({ [name_col_no]: d_1[res.index].no_ls });
+            t.setData({ [name_col_name]: d_1[res.index][name_col_name] });
+            t.onLoad();
+          },
+        });
+      },
+      fail: (res2) => {
+        dd.alert({ content: JSON.stringify(res2) });
+      },
+      complete: (res2) => {
+        dd.hideLoading();
+      },
     });
+  },
+  select_title() {
+    var t = this;
+    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_money_title_1"
+    , "no_money_title_1", "name_money_title_1");
+  },
+  select_company() {
+    var t = this;
+    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_company"
+    , "no_company", "name_company");
   },
   newdate_1() {
     var t = this;
