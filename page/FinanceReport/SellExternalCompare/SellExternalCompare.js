@@ -137,17 +137,11 @@ Page({
             for (var i = 0; i < d_1.length; i++) {
               var d = d_1[i];
               var title_1 = "";
-              title_1 += "[名称]" + d.name_task;
-              title_1 += "\n[截止]" + d.date_end;
-              title_1 += "\n[地点]" + d.addr;
+              title_1 += "[业务员]" + d.name_employee;
+              title_1 += "\n[上一年]" + d.year_1;
+              title_1 += "\n[这一年]" + d.year_2;
+              title_1 += "\n[同比%]" + d.qty_rate;
               var title_2 = "";
-              if (d.name_task != "") title_2 += " [名称]" + d.name_task;
-              if (d.date_end != "") title_2 += " [截止]" + d.date_end;
-              if (d.addr != "") title_2 += " [地点]" + d.addr;
-              if (d.name_task_flow != "") title_2 += " [流程]" + d.name_task_flow;
-              if (d.name_project != "") title_2 += " [项目]" + d.name_project;
-              if (d.qty_reward != "") title_2 += " [积分]" + d.qty_reward;
-              if (d.remark_task != "") title_2 += " [备注]" + d.remark_task;
 
               var dd_2 = {
                 title: title_1

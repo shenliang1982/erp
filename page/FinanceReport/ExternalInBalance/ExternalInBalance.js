@@ -4,7 +4,7 @@ Page({
   ...list,
   data: {
     listData: {
-      onItemTap: 'handleListItemTap',
+      //onItemTap: 'handleListItemTap',
       //header: 'list1',
       data: []
     },
@@ -14,7 +14,6 @@ Page({
       url: ""
     },
     date_1: '',
-    date_2: '',
     no_money_title_1: '',
     name_money_title_1: '抬头',
     no_company: '',
@@ -82,8 +81,6 @@ Page({
       },
     });
   },
-  handleListItemTap(e) {
-  },
   onShow() {
     var t = this;
     dd.getStorage({
@@ -100,8 +97,7 @@ Page({
     var t = this;
     if (t.data.date_1 == '') {
       var now = new Date();
-      t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + (now.getDate()) });
-      t.setData({ "date_2": t.data.date_1 });
+      t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) });
     }
     //判定是否登录
     dd.getStorage({
@@ -120,8 +116,7 @@ Page({
           data: {
             username: t.data.login.username,
             code_login: t.data.login.code_login,
-            date_start: t.data.date_1,
-            date_end: t.data.date_2 + " 23:59:59",
+            date_start: t.data.date_1 + "-01",
             no_money_title_1: t.data.no_money_title_1,
             no_company: t.data.no_company,
             name_space: "FinanceReport.ExternalInBalance.BindinggridControl1"

@@ -183,17 +183,10 @@ Page({
             for (var i = 0; i < d_1.length; i++) {
               var d = d_1[i];
               var title_1 = "";
-              title_1 += "[名称]" + d.name_task;
-              title_1 += "\n[截止]" + d.date_end;
-              title_1 += "\n[地点]" + d.addr;
+              title_1 += "[日期]" + d.date_act;
+              title_1 += "\n[应付]" + d.amount_out_need;
+              title_1 += "\n[付款]" + d.amount_out;
               var title_2 = "";
-              if (d.name_task != "") title_2 += " [名称]" + d.name_task;
-              if (d.date_end != "") title_2 += " [截止]" + d.date_end;
-              if (d.addr != "") title_2 += " [地点]" + d.addr;
-              if (d.name_task_flow != "") title_2 += " [流程]" + d.name_task_flow;
-              if (d.name_project != "") title_2 += " [项目]" + d.name_project;
-              if (d.qty_reward != "") title_2 += " [积分]" + d.qty_reward;
-              if (d.remark_task != "") title_2 += " [备注]" + d.remark_task;
 
               var dd_2 = {
                 title: title_1
