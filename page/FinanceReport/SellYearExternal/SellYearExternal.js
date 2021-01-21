@@ -15,6 +15,8 @@ Page({
     },
     date_1: '',
     date_2: '',
+    no_money_title_1: '',
+    name_money_title_1: '抬头'
   },
   add() {
     dd.navigateTo({

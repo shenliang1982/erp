@@ -15,6 +15,8 @@ Page({
     },
     date_1: '',
     date_2: '',
+    no_company: '',
+    name_company: '客户'
   },
   add() {
     dd.navigateTo({

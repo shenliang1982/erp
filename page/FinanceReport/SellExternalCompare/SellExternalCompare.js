@@ -14,7 +14,7 @@ Page({
       url: ""
     },
     date_1: '',
-    date_2: '',
+    date_2: ''
   },
   add() {
     dd.navigateTo({

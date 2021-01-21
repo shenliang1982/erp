@@ -15,6 +15,8 @@ Page({
     },
     date_1: '',
     date_2: '',
+    no_employee: '',
+    name_employee: '业务员'
   },
   add() {
     dd.navigateTo({

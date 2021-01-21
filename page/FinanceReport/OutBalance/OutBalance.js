@@ -15,6 +15,8 @@ Page({
     },
     date_1: '',
     date_2: '',
+    no_company: '',
+    name_company: '单位'
   },
   add() {
     dd.navigateTo({
