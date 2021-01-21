@@ -57,11 +57,6 @@ Page({
       },
     });
   },
-  select_title() {
-    var t = this;
-    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_money_title_1"
-    , "no_money_title_1", "name_money_title_1");
-  },
   select_company() {
     var t = this;
     t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_company"

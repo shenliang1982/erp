@@ -66,10 +66,15 @@ Page({
     t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_money_title_1"
     , "no_money_title_1", "name_money_title_1");
   },
-  select_company() {
+  select_employee() {
     var t = this;
-    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_company"
-    , "no_company", "name_company");
+    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_employee"
+    , "no_employee", "name_employee");
+  },
+  select_currency() {
+    var t = this;
+    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_currency"
+    , "no_currency", "name_currency");
   },
   newdate_1() {
     var t = this;
