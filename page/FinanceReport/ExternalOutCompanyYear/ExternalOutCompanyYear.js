@@ -59,7 +59,7 @@ Page({
   },
   select_title() {
     var t = this;
-    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_money_title_1"
+    t.select_item("FinanceReport.ExternalOutCompanyYear.AlxpanelControl2name_money_title_1"
     , "no_money_title_1", "name_money_title_1");
   },
   newdate_1() {

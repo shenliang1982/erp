@@ -59,7 +59,7 @@ Page({
   },
   select_employee() {
     var t = this;
-    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_employee"
+    t.select_item("FinanceReport.InCompany.AlxpanelControl2name_employee"
     , "no_employee", "name_employee");
   },
   newdate_1() {

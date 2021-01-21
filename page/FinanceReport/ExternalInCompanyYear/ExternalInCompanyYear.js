@@ -63,17 +63,17 @@ Page({
   },
   select_title() {
     var t = this;
-    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_money_title_1"
+    t.select_item("FinanceReport.ExternalInCompanyYear.AlxpanelControl2name_money_title_1"
     , "no_money_title_1", "name_money_title_1");
   },
   select_employee() {
     var t = this;
-    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_employee"
+    t.select_item("FinanceReport.ExternalInCompanyYear.AlxpanelControl2name_employee"
     , "no_employee", "name_employee");
   },
   select_currency() {
     var t = this;
-    t.select_item("FinanceReport.ExternalInBalance.AlxpanelControl2name_currency"
+    t.select_item("FinanceReport.ExternalInCompanyYear.AlxpanelControl2name_currency"
     , "no_currency", "name_currency");
   },
   newdate_1() {
