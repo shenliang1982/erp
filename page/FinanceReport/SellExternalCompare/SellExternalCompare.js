@@ -127,7 +127,7 @@ Page({
             code_login: t.data.login.code_login,
             date_start: t.data.date_1,
             date_end: t.data.date_2 + " 23:59:59",
-            name_space: "Task.TaskListAct.BindinggridControl1"
+            name_space: "FinanceReport.SellExternalCompare.BindinggridControl1"
           },
           dataType: 'json',
           success: (res2) => {
