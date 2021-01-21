@@ -4,7 +4,7 @@ Page({
   ...list,
   data: {
     listData: {
-      onItemTap: 'handleListItemTap',
+      //onItemTap: 'handleListItemTap',
       //header: 'list1',
       data: []
     },
@@ -39,8 +39,6 @@ Page({
         t.onLoad();
       },
     });
-  },
-  handleListItemTap(e) {
   },
   onShow() {
     var t = this;

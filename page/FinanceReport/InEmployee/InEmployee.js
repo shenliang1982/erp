@@ -4,7 +4,7 @@ Page({
   ...list,
   data: {
     listData: {
-      onItemTap: 'handleListItemTap',
+      //onItemTap: 'handleListItemTap',
       //header: 'list1',
       data: []
     },
@@ -25,55 +25,6 @@ Page({
       success: (res) => {
         t.setData({ "date_1": res.date });
         t.onLoad();
-      },
-    });
-  },
-  handleListItemTap(e) {
-    var t = this;
-    var d = this.data.listData.data[e.currentTarget.dataset.index];
-    dd.showActionSheet({
-      title: d.title_2,
-      items: ['完成', '达成', '放弃', '搁置'],
-      //cancelButtonText: '取消',
-      success: (res) => {
-        if (res.index == 0) {
-          //提交
-          dd.httpRequest({
-            url: t.data.login.url,
-            method: 'POST',
-            data: {
-              username: t.data.login.username,
-              code_login: t.data.login.code_login,
-              no_ls: d.no_ls,
-              name_space: "ProjectLinkUse.TaskListAct.FastYes"
-            },
-            dataType: 'json',
-            success: (res2) => {
-              t.onLoad();
-            },
-            fail: (res2) => {
-              dd.alert({content: JSON.stringify(res2)});
-            },
-            complete: (res2) => {
-              dd.hideLoading();
-            },
-          });
-        }
-        else if (res.index == 1) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerYes?no_ls=' + d.no_ls
-          });
-        }
-        else if (res.index == 2) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerNo?no_ls=' + d.no_ls
-          });
-        }
-        else if (res.index == 3) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerNext?no_ls=' + d.no_ls
-          });
-        }
       },
     });
   },
