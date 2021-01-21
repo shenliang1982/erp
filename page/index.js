@@ -95,14 +95,14 @@ Page({
               page: 'FinanceReport/InEmployee/InEmployee',
             },
             {
-              title: '应付账款',
-              entitle: '财务报表/应付账款',
-              page: 'FinanceReport/OutCompany/OutCompany',
+              title: '应收账款',
+              entitle: '财务报表/应收账款',
+              page: 'FinanceReport/InCompany/InCompany',
             },
             {
               title: '应收月度对账单',
               entitle: '财务报表/应收月度对账单',
-              page: 'FinanceReport/OutBalance/OutBalance',
+              page: 'FinanceReport/InBalance/InBalance',
             },
           ],
         }, {

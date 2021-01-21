@@ -31,50 +31,10 @@ Page({
   handleListItemTap(e) {
     var t = this;
     var d = this.data.listData.data[e.currentTarget.dataset.index];
-    dd.showActionSheet({
-      title: d.title_2,
-      items: ['完成', '达成', '放弃', '搁置'],
-      //cancelButtonText: '取消',
-      success: (res) => {
-        if (res.index == 0) {
-          //提交
-          dd.httpRequest({
-            url: t.data.login.url,
-            method: 'POST',
-            data: {
-              username: t.data.login.username,
-              code_login: t.data.login.code_login,
-              no_ls: d.no_ls,
-              name_space: "ProjectLinkUse.TaskListAct.FastYes"
-            },
-            dataType: 'json',
-            success: (res2) => {
-              t.onLoad();
-            },
-            fail: (res2) => {
-              dd.alert({content: JSON.stringify(res2)});
-            },
-            complete: (res2) => {
-              dd.hideLoading();
-            },
-          });
-        }
-        else if (res.index == 1) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerYes?no_ls=' + d.no_ls
-          });
-        }
-        else if (res.index == 2) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerNo?no_ls=' + d.no_ls
-          });
-        }
-        else if (res.index == 3) {
-          dd.navigateTo({
-            url: '../TaskAnswerYes/TaskAnswerNext?no_ls=' + d.no_ls
-          });
-        }
-      },
+    dd.navigateTo({
+      url: '../OutBalance/OutBalance?no_company=' + d.no_company 
+      + "&name_company=" + d.name_company
+      + "&date_1=" + t.data.date_1
     });
   },
   onShow() {
@@ -125,8 +85,8 @@ Page({
               var title_1 = "";
               title_1 += "[客户]" + d.name_company;
               title_1 += "\n[上期]" + d.amount_left_old;
-              title_1 += "\n[应收]" + d.amount_in_need;
-              title_1 += "\n[收款]" + d.amount_in;
+              title_1 += "\n[应付]" + d.amount_out_need;
+              title_1 += "\n[付款]" + d.amount_out;
               title_1 += "\n[余额]" + d.amount_left_new;
               var title_2 = "";
 

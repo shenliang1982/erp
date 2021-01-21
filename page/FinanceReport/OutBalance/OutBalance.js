@@ -86,7 +86,7 @@ Page({
       }
     });
   },
-  onLoad() {
+  onLoad(e) {
     var t = this;
     if (t.data.date_1 == '') {
       if (e == null || e.date_1 == null) {
