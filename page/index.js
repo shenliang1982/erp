@@ -37,7 +37,7 @@ Page({
               entitle: '财务报表/外贸应收明细',
               page: 'FinanceReport/ExternalInBalance/ExternalInBalance',
             },
-            {
+            /*{
               title: '外贸业务员分组月汇总',
               entitle: '财务报表/外贸业务员分组月汇总',
               page: 'FinanceReport/SellYearExternal/SellYearExternal',
@@ -51,7 +51,7 @@ Page({
               title: '业务排名内外',
               entitle: '财务报表/业务排名内外',
               page: 'FinanceReport/SellSort/SellSort',
-            },
+            },*/
           ],
         }, {
           icon: '/image/basic.png',
@@ -79,7 +79,7 @@ Page({
           title: '内贸应收',
           entitle: '内贸应收',
           subs: [
-            {
+            /*{
               title: '业务员分组分月汇总',
               entitle: '财务报表/业务员分组分月汇总',
               page: 'FinanceReport/SellYear/SellYear',
@@ -88,7 +88,7 @@ Page({
               title: '销售同比内贸',
               entitle: '财务报表/销售同比内贸',
               page: 'FinanceReport/SellCompare/SellCompare',
-            },
+            },*/
             {
               title: '分组汇总',
               entitle: '财务报表/分组汇总',
