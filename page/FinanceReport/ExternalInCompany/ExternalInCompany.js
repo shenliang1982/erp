@@ -91,12 +91,40 @@ Page({
   handleListItemTap(e) {
     var t = this;
     var d = this.data.listData.data[e.currentTarget.dataset.index];
-    dd.navigateTo({
+    /*dd.navigateTo({
       url: '../ExternalInBalance/ExternalInBalance?date_1=' + t.data.date_1
         + '&no_money_title_1=' + t.data.no_money_title_1
         + '&name_money_title_1=' + t.data.name_money_title_1
         + '&no_company=' + d.no_company
         + '&name_company=' + d.name_company
+    });*/
+    //载入等待
+    dd.showLoading({
+      content: '加载中...',
+      delay: '1000',
+    });
+    //载入列表
+    dd.httpRequest({
+      url: t.data.login.url + "ActGrid.ashx", // + "ActBack.ashx",
+      method: 'POST',
+      data: {
+        username: t.data.login.username,
+        code_login: t.data.login.code_login,
+        date_start: t.data.date_1 + "-01",
+        no_money_title_1: t.data.no_money_title_1,
+        no_company: d.no_company,
+        name_space: "FinanceReport.ExternalInBalance.BindinggridControl1"
+      },
+      dataType: 'text',//'json',
+      success: () => {
+        dd.navigateTo({ url: '../ExternalInBalanceHtml/ExternalInBalanceHtml?username=' + t.data.login.username });
+      },
+      fail: (res2) => {
+        dd.alert({ content: JSON.stringify(res2) });
+      },
+      complete: (res2) => {
+        dd.hideLoading();
+      },
     });
   },
   onShow() {

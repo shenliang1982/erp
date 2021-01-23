@@ -110,7 +110,7 @@ Page({
         });
         //载入列表
         dd.httpRequest({
-          url: t.data.login.url + "ActGrid.ashx", // + "ActBack.ashx",
+          url: t.data.login.url + "ActBack.ashx", // + "ActBack.ashx",
           method: 'POST',
           data: {
             username: t.data.login.username,
@@ -120,10 +120,10 @@ Page({
             no_company: t.data.no_company,
             name_space: "FinanceReport.ExternalInBalance.BindinggridControl1"
           },
-          dataType: 'text',//'json',
+          dataType: 'json',//'json',
           success: (res2) => {
-            t.setData({ url: t.data.login.url + "/print/ActGrid" + t.data.login.username + ".html" });
-            return;
+            //t.setData({ url: t.data.login.url + "/print/ActGrid" + t.data.login.username + ".html" });
+            //return;
             //dd.alert({content: "51" + JSON.stringify(res2.data)});
             var d_1 = res2.data.json_ar_0;
             var d_2 = [];

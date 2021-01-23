@@ -17,7 +17,8 @@
     "page/FinanceReport/SellSort/SellSort",
     "page/FinanceReport/SellYear/SellYear",
     "page/FinanceReport/SellYearExternal/SellYearExternal",
-    "page/FinanceReport/SumUp/SumUp"
+    "page/FinanceReport/SumUp/SumUp",
+    "page/FinanceReport/ExternalInBalanceHtml/ExternalInBalanceHtml"
   ],
   "window": {
     "defaultTitle": "正达ERP",
