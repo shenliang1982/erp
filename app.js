@@ -61,7 +61,7 @@ App({
             var url_1 = {
               username: res2.data.username,
               code_login: res2.data.code_login,
-              url: "http://115.238.99.170:8888/ZDWeb/ActBack.ashx",
+              url: "http://115.238.99.170:8888/ZDWeb/",
             };
             dd.setStorage({
               key: 'login',

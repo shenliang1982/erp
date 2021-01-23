@@ -11,8 +11,10 @@ Page({
     login: {
       username: "",
       code_login: "",
-      url: ""
+      url: "",
+      url_1: ""
     },
+    url: '',
     date_1: '',
     no_money_title_1: '1-001',
     name_money_title_1: '英帛尔',
@@ -23,7 +25,7 @@ Page({
     var t = this;
     //载入列表
     dd.httpRequest({
-      url: t.data.login.url,
+      url: t.data.login.url + "ActBack.ashx",
       method: 'POST',
       data: {
         username: t.data.login.username,
@@ -108,7 +110,7 @@ Page({
         });
         //载入列表
         dd.httpRequest({
-          url: t.data.login.url,
+          url: t.data.login.url + "ActGrid.ashx", // + "ActBack.ashx",
           method: 'POST',
           data: {
             username: t.data.login.username,
@@ -118,8 +120,10 @@ Page({
             no_company: t.data.no_company,
             name_space: "FinanceReport.ExternalInBalance.BindinggridControl1"
           },
-          dataType: 'json',
+          dataType: 'text',//'json',
           success: (res2) => {
+            t.setData({ url: t.data.login.url + "/print/ActGrid" + t.data.login.username + ".html" });
+            return;
             //dd.alert({content: "51" + JSON.stringify(res2.data)});
             var d_1 = res2.data.json_ar_0;
             var d_2 = [];

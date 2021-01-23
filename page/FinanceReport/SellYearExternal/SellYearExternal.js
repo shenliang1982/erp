@@ -21,7 +21,7 @@ Page({
     var t = this;
     //载入列表
     dd.httpRequest({
-      url: t.data.login.url,
+      url: t.data.login.url + "ActBack.ashx",
       method: 'POST',
       data: {
         username: t.data.login.username,
@@ -104,7 +104,7 @@ Page({
         });
         //载入列表
         dd.httpRequest({
-          url: t.data.login.url,
+          url: t.data.login.url + "ActBack.ashx",
           method: 'POST',
           data: {
             username: t.data.login.username,
