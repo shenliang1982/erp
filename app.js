@@ -58,7 +58,7 @@ App({
           },
           dataType: 'json',
           success: (res2) => {
-            if (res2.data.error != "") dd.alert({ content: res2.data.error });
+            //if (res2.data.error != "") dd.alert({ content: res2.data.error });
             var url_1 = {
               username: res2.data.username,
               code_login: res2.data.code_login,

@@ -68,8 +68,9 @@ Page({
     var t = this;
     if (t.data.date_1 == '') {
       var now = new Date();
-      t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) + "-" + (now.getDate()) });
-      t.setData({ "date_2": t.data.date_1 });
+      var now_1 = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+      t.setData({ "date_1": now.getFullYear() + "-" + (now.getMonth() + 1) + "-01" });
+      t.setData({ "date_2": now_1.getFullYear() + "-" + (now_1.getMonth() + 1) + "-" + now_1.getDate() });
     }
     //判定是否登录
     dd.getStorage({
