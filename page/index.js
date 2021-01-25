@@ -165,6 +165,7 @@ Page({
           },
           dataType: 'json',
           success: (res2) => {
+            if (res2.data.error != "") dd.alert({ content: res2.data.error });
             var d_1 = res2.data.json_ar_0;
             var d_2 = t.data.arr.list;
             for (var i = d_2.length - 1; i > -1; i--) {

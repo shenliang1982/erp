@@ -94,7 +94,7 @@ Page({
           },
           dataType: 'json',
           success: (res2) => {
-            //dd.alert({content: "51" + JSON.stringify(res2.data)});
+            if (res2.data.error != "") dd.alert({ content: res2.data.error });
             var d_1 = res2.data.json_ar_0;
             var d_2 = [];
             var d = d_1[0];

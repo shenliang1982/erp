@@ -34,6 +34,7 @@ Page({
       },
       dataType: 'json',
       success: (res2) => {
+        if (res2.data.error != "") dd.alert({ content: res2.data.error });
         var d_1 = res2.data.json_ar_0;
         var d_2 = [];
         for (var i = 0; i < d_1.length; i++) {
@@ -91,14 +92,14 @@ Page({
   handleListItemTap(e) {
     var t = this;
     var d = this.data.listData.data[e.currentTarget.dataset.index];
-    /*dd.navigateTo({
+    dd.navigateTo({
       url: '../ExternalInBalance/ExternalInBalance?date_1=' + t.data.date_1
         + '&no_money_title_1=' + t.data.no_money_title_1
         + '&name_money_title_1=' + t.data.name_money_title_1
         + '&no_company=' + d.no_company
         + '&name_company=' + d.name_company
-    });*/
-    //载入等待
+    });
+    /*//载入等待
     dd.showLoading({
       content: '加载中...',
       delay: '1000',
@@ -117,6 +118,7 @@ Page({
       },
       dataType: 'text',//'json',
       success: () => {
+        if (res2.data.error != "") dd.alert({ content: res2.data.error });
         dd.hideLoading();
         dd.navigateTo({ url: '../ActGridHtml/ActGridHtml?username=' + t.data.login.username });
       },
@@ -126,7 +128,7 @@ Page({
       complete: (res2) => {
         dd.hideLoading();
       },
-    });
+    });*/
   },
   onShow() {
     var t = this;
@@ -171,7 +173,7 @@ Page({
           },
           dataType: 'json',
           success: (res2) => {
-            //dd.alert({content: "51" + JSON.stringify(res2.data)});
+            if (res2.data.error != "") dd.alert({ content: res2.data.error });
             var d_1 = res2.data.json_ar_0;
             var d_2 = [];
             for (var i = 0; i < d_1.length; i++) {

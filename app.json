@@ -14,11 +14,16 @@
     "page/FinanceReport/OutCompany/OutCompany",
     "page/FinanceReport/SellCompare/SellCompare",
     "page/FinanceReport/SellExternalCompare/SellExternalCompare",
-    "page/FinanceReport/SellSort/SellSort",
     "page/FinanceReport/SellYear/SellYear",
     "page/FinanceReport/SellYearExternal/SellYearExternal",
     "page/FinanceReport/SumUp/SumUp",
-    "page/FinanceReport/ActGridHtml/ActGridHtml"
+    "page/FinanceReport/ActGridHtml/ActGridHtml",
+    "page/FinanceReport/SellSortA/SellSortA",
+    "page/FinanceReport/SellSortB/SellSortB",
+    "page/FinanceReport/SellSortC/SellSortC",
+    "page/FinanceReport/SellSortD/SellSortD",
+    "page/FinanceReport/SellSortE/SellSortE",
+    "page/FinanceReport/SellSortF/SellSortF"
   ],
   "window": {
     "defaultTitle": "正达ERP",
