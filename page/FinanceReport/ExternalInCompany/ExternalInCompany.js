@@ -117,7 +117,7 @@ Page({
       },
       dataType: 'text',//'json',
       success: () => {
-        dd.navigateTo({ url: '../ExternalInBalanceHtml/ExternalInBalanceHtml?username=' + t.data.login.username });
+        dd.navigateTo({ url: '../ActGridHtml/ActGridHtml?username=' + t.data.login.username });
       },
       fail: (res2) => {
         dd.alert({ content: JSON.stringify(res2) });
