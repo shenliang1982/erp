@@ -117,6 +117,7 @@ Page({
       },
       dataType: 'text',//'json',
       success: () => {
+        dd.hideLoading();
         dd.navigateTo({ url: '../ActGridHtml/ActGridHtml?username=' + t.data.login.username });
       },
       fail: (res2) => {

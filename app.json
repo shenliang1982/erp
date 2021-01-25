@@ -18,7 +18,6 @@
     "page/FinanceReport/SellYear/SellYear",
     "page/FinanceReport/SellYearExternal/SellYearExternal",
     "page/FinanceReport/SumUp/SumUp",
-    "page/FinanceReport/ExternalInBalanceHtml/ExternalInBalanceHtml",
     "page/FinanceReport/ActGridHtml/ActGridHtml"
   ],
   "window": {
