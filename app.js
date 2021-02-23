@@ -51,7 +51,7 @@ App({
       success: function (res1) {
         //免登
         dd.httpRequest({
-          url: "http://115.238.99.170:8888/ZDWeb/DingLogin.ashx",
+          url: "http://211.149.129.233:8888/TaskWeb/DingLogin.ashx",
           method: 'POST',
           data: {
             code: res1.authCode
@@ -62,7 +62,7 @@ App({
             var url_1 = {
               username: res2.data.username,
               code_login: res2.data.code_login,
-              url: "http://115.238.99.170:8888/ZDWeb/",
+              url: "http://211.149.129.233:8888/TaskWeb/",
             };
             dd.setStorage({
               key: 'login',

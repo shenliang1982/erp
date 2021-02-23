@@ -6,7 +6,7 @@
     <view class="slogon">
         <image src="/image/logo.png" mode="scaleToFill" class="logo"/>
         <view class="info">
-            <text class="desc">正达财务</text>
+            <text class="desc">正达ERP</text>
         </view>
     </view>
     <template is="grid" data="{{...arr}}"/>

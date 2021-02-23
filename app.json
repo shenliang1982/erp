@@ -23,10 +23,11 @@
     "page/FinanceReport/SellSortC/SellSortC",
     "page/FinanceReport/SellSortD/SellSortD",
     "page/FinanceReport/SellSortE/SellSortE",
-    "page/FinanceReport/SellSortF/SellSortF"
+    "page/FinanceReport/SellSortF/SellSortF",
+    "page/Purchase/PurchaseList/PurchaseList"
   ],
   "window": {
-    "defaultTitle": "正达ERP",
+    "defaultTitle": "快诺优ERP",
     "backgroundColor": "#F5F5F9",
     "pullRefresh": false,
     "allowsBounceVertical": "YES"
@@ -37,10 +38,10 @@
     "backgroundColor": "#F5F5F9",
     "items": [
       {
-        "pagePath": "page/FinanceReport/index",
+        "pagePath": "page/index",
         "icon": "image/icon_component.png",
         "activeIcon": "image/icon_component_HL.png",
-        "name": "正达财务"
+        "name": "快诺优ERP"
       }
     ]
   },
